@@ -105,10 +105,45 @@
     margin:0 0 9px;font-size:18px;line-height:1.4;font-weight:850;
     color:var(--orange-dark);letter-spacing:-.025em;
   }
-  .detail-copy{
-    margin:0;font-size:15px;line-height:1.8;font-weight:400;
-    color:#34464b;white-space:pre-wrap;overflow-wrap:anywhere;
-  }
+.detail-copy{
+  margin:0;
+  font-size:15px;
+  line-height:1.8;
+  font-weight:400;
+  color:#34464b;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+
+  max-height:180px;
+  overflow-y:auto;
+  padding-right:12px;
+
+  /* 기본 스크롤바 숨기기 */
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+.detail-copy::-webkit-scrollbar{
+  display:none;
+}
+
+/* 크롬 스크롤바 디자인 */
+.detail-copy::-webkit-scrollbar{
+  width:7px;
+}
+
+.detail-copy::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.detail-copy::-webkit-scrollbar-thumb{
+  background:#4bb3d0;
+  border-radius:20px;
+}
+
+.detail-copy::-webkit-scrollbar-thumb:hover{
+  background:#244d5a;
+}
   .modal-divider{height:1px;background:#e7d7c9;margin:0 0 22px}
   @media(max-width:900px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.page{padding-top:35px}}
   @media(max-width:560px){
@@ -598,7 +633,7 @@
     "department": "디지털인문예술전공",
     "author": "여동규",
     "title": "동해를 읽다",
-    "description": "바다에는 저마다의 이야기가 흐르고, 책에는 그 이야기를 담아내는 시간이 쌓입니다. ‘동해를 읽다’는 동해의 자연과 독서의 경험을 하나의 풍경으로 연결한 작품입니다.책장을 넘기는 행위를 파도의 흐름에 빗대어 표현하고, 등대와 해안의 이미지를 더해 동해만의 지역적 정체성을 담았습니다. 한 권의 책을 펼치는 순간, 동해의 풍경과 이야기도 함께 펼쳐지기를 바라는 마음을 담았습니",
+    "description": "바다에는 저마다의 이야기가 흐르고, 책에는 그 이야기를 담아내는 시간이 쌓입니다. ‘동해를 읽다’는 동해의 자연과 독서의 경험을 하나의 풍경으로 연결한 작품입니다.책장을 넘기는 행위를 파도의 흐름에 빗대어 표현하고, 등대와 해안의 이미지를 더해 동해만의 지역적 정체성을 담았습니다. 한 권의 책을 펼치는 순간, 동해의 풍경과 이야기도 함께 펼쳐지기를 바라는 마음을 담았습니다.",
     "aiContribution": ""
   },
   {
@@ -956,13 +991,11 @@
 
   // 수상작 정보는 실제 수상작 정보로 교체할 수 있습니다.
   const awardWorks = [
-    /*
-    <!--{award:"최우수상",title:"최우수상 수상작",studentId:"",department:"",author:"수상자 정보",image:"",description:"최우수상 수상작의 작품 소개가 들어갑니다. 작품의 주제와 디자인 의도를 입력해 주세요.",aiContribution:"AI 활용 내용과 학생이 직접 수행한 기여 내용을 입력해 주세요."},
-    {award:"우수상",title:"우수상 수상작 1",studentId:"",department:"",author:"수상자 정보",image:"",description:"우수상 수상작의 작품 소개가 들어갑니다. 작품의 주제와 디자인 의도를 입력해 주세요.",aiContribution:"AI 활용 내용과 학생이 직접 수행한 기여 내용을 입력해 주세요."},
-    {award:"우수상",title:"우수상 수상작 2",studentId:"",department:"",author:"수상자 정보",image:"",description:"우수상 수상작의 작품 소개가 들어갑니다. 작품의 주제와 디자인 의도를 입력해 주세요.",aiContribution:"AI 활용 내용과 학생이 직접 수행한 기여 내용을 입력해 주세요."},
-    {award:"우수상",title:"우수상 수상작 3",studentId:"",department:"",author:"수상자 정보",image:"",description:"우수상 수상작의 작품 소개가 들어갑니다. 작품의 주제와 디자인 의도를 입력해 주세요.",aiContribution:"AI 활용 내용과 학생이 직접 수행한 기여 내용을 입력해 주세요."},
-    {award:"장려상",title:"장려상 수상작",studentId:"",department:"",author:"수상자 정보",image:"",description:"장려상 수상작의 작품 소개가 들어갑니다. 작품의 주제와 디자인 의도를 입력해 주세요.",aiContribution:"AI 활용 내용과 학생이 직접 수행한 기여 내용을 입력해 주세요."}
-    */
+    {award:"최우수상",title:"동해를 읽다.",studentId:"20237047",department:"디지털인문예술전공",author:"여동규",image:"images/8.20237047_여동규.png",description:"바다에는 저마다의 이야기가 흐르고, 책에는 그 이야기를 담아내는 시간이 쌓입니다. ‘동해를 읽다’는 동해의 자연과 독서의 경험을 하나의 풍경으로 연결한 작품입니다.책장을 넘기는 행위를 파도의 흐름에 빗대어 표현하고, 등대와 해안의 이미지를 더해 동해만의 지역적 정체성을 담았습니다. 한 권의 책을 펼치는 순간, 동해의 풍경과 이야기도 함께 펼쳐지기를 바라는 마음을 담았습니다.",aiContribution:""},
+    {award:"우수상",title:"도서관에서 꿈꾸다",studentId:"20231035",department:"",author:"박서영",image:"images/2.20231035 박서영.png",description:"꿈빛마루 도서관'이라는 이름을 서가에 꽂힌 책들로 다시 썼다. 한글의 획은 여러 겹의 가는 선으로 나뉘어 책등과 책장의 결을 닮았고, 그 사이에 Dream, Read, Discover, Explore, at the Library라는 단어를 획처럼 끼워 넣었다. 글자를 따라 읽다 보면 '도서관에서 꿈꾸고, 읽고, 발견하고, 탐험하라'는 한 문장이 드러난다. 어두운 배경 가운데로 번지는 빛은 책을 펼치는 순간 켜지는 작은 등불이자, 이 도서관의 이름인 '꿈빛'을 뜻한다. 이 장서표가 붙은 책들이 누군가의 꿈을 밝히는 빛이 되었으면 한다.",aiContribution:""},
+    {award:"우수상",title:"솔아래, 바다 위에서",studentId:"20266616",department:"",author:"박채빈",image:"images/4. 20266616_박채빈.png",description:"동해 추암 바다 위, 오랜 파도를 견디며 곧게 선 촛대바위와 그 꼭대기에 뿌리내린 해송, 그리고 소나무 그늘 아래 책을 펼친 한 사람을 담았습니다. 옛 그림 속 선비가 솔 아래에서 책을 읽던 송하독서(松下讀書)의 장면을 동해의 풍경으로 옮겨, 강원의 바다와 함께하는 독서의 시간을 그렸습니다. 여백에는 '동해도서관'을 세로로 쓰고, 동해시립 발한도서관의 둥근 정면을 새긴 아치형 '藏書' 낙관을 찍어 이 책이 동해의 책임을 조용히 표시했습니다. 파도 속에서도 자리를 지키는 바위처럼, 이곳에서 읽은 책 한 권이 누군가의 마음에 단단한 중심이 되기를 바랍니다",aiContribution:""},
+    {award:"우수상",title:"해뜨는 서가",studentId:"20232316",department:"노인복지학과",author:"김율",image:"images/9.20232316 김율.png",description:"",aiContribution:""},
+    {award:"장려상",title:"산과 바다 사이, 책으로 여는 동해",studentId:"20212750, 20222713,20222723",department:"",author:"전수현, 김승찬, 배재현",image:"images/10.20212750전수현.jpg",description:"'강원과 함께 하는 도서관'이라는 주제 아래, 동해시립도서관이 지닌 지역적 특색과 독서의 가치를 한 장의 장서표에 담아내고자 했습니다. 산과 바다가 어우러진 동해의 자연경관과 도서관의 건축미를 조화롭게 배치하여, 책을 펼치는 순간 동해의 맑은 정취와 지혜가 독자에게 스며드는 경험을 시각화했습니다.",aiContribution:""}
   ];
 
   const gallery = document.getElementById("gallery");
